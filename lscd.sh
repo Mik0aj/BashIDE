@@ -22,6 +22,12 @@ if [[ "$choice" == "new" ]]
     read -p "Enter the name of the new folder: " folder_name                                         
     mkdir "$folder_name"                                                                                 
     cd "$folder_name"                                                                                    
+# Create folders
+	mkdir src
+	mkdir test
+	mkdir build
+# Populate folders
+	
 # Check if choice is a number                                                                            
 elif [[ $choice =~ ^[0-9]+$ ]]                                                                           
   then                                                                                                   
