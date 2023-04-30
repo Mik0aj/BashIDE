@@ -27,7 +27,27 @@ if [[ "$choice" == "new" ]]
 	mkdir test
 	mkdir build
 # Populate folders
+	cd src
+	echo '#include <iostream>
+	
+int main() {
+    std::cout << "Hello, World!" << std::endl;
+    return 0;
+}' > main.cpp
+
+echo "Created main.cpp with Hello, World! program."
+	cd ..
 	cd test
+	echo '#include <gtest/gtest.h>                 
+                                         
+TEST(ExampleSuite, ExampleOne)              
+{                                        
+    // TODO: Add test case logic         
+}                                        
+                                         
+' > test.cpp
+
+echo "Created main.cpp with Hello, World! program."
 	cmakeMaker.sh $folder_name
 	cd ../build
 	cmake ../test/
