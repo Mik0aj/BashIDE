@@ -27,7 +27,12 @@ if [[ "$choice" == "new" ]]
 	mkdir test
 	mkdir build
 # Populate folders
-	
+	cd test
+	cmakeMaker.sh $folder_name
+	cd ../build
+	cmake ../test/
+	cmake --build .
+
 # Check if choice is a number                                                                            
 elif [[ $choice =~ ^[0-9]+$ ]]                                                                           
   then                                                                                                   
